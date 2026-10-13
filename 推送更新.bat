@@ -2,29 +2,24 @@
 chcp 65001 >nul
 title Push Fanqie Rank Tracker to GitHub
 cd /d "%~dp0"
-
 echo ============================================
 echo   Push local changes to GitHub
-echo   Repo: https://github.com/yyk551/FanqieRankTracker
+echo   Repo: https://github.com/3170131329-hash/FanqieRankTracker-all
 echo   (After a successful push, GitHub Actions will
 echo    scrape BOTH female and male channels daily.)
 echo ============================================
 echo.
-
 echo [1/3] Commits waiting to be pushed:
 git log --oneline origin/main..HEAD
 echo.
-
 echo [2/3] Pushing to origin/main ...
 git push -u origin main
 if errorlevel 1 goto failed
-
 echo.
 echo [3/3] Done. Check the Actions tab on GitHub in a few minutes.
 echo.
 pause
 exit /b 0
-
 :failed
 echo.
 echo [FAILED] The push was rejected.
@@ -45,9 +40,9 @@ echo      GitHub repo - Settings - Collaborators - Add people
 echo      then run this script again
 echo.
 echo   C^) Use a Personal Access Token:
-echo      git remote set-url origin https://OWNER:TOKEN@github.com/yyk551/FanqieRankTracker.git
+echo      git remote set-url origin https://OWNER:TOKEN@github.com/3170131329-hash/FanqieRankTracker-all.git
 echo      git push -u origin main
-echo      git remote set-url origin https://github.com/yyk551/FanqieRankTracker.git
+echo      git remote set-url origin https://github.com/3170131329-hash/FanqieRankTracker-all.git
 echo.
 echo   NOTE: The first push to a brand-new repo needs GitHub Pages enabled once:
 echo      GitHub repo - Settings - Pages - Source: GitHub Actions - Save
